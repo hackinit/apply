@@ -45,11 +45,19 @@ var profile = {
     type: String
   },
 
-   promoExperience: {
+  //  promoExperience: {
+  //   type: String
+  // },
+
+   isHacker: {
     type: String
   },
 
-   isHacker: {
+  whyInterestedStem: {
+    type: String
+  },
+
+  projectHacker: {
     type: String
   },
 
@@ -57,12 +65,24 @@ var profile = {
     type: String,
   },
 
-   promoPlan: {
-  //essay: {
+  techIssue: {
     type: String,
-    //min: 0,
-    //max: 1500
   },
+
+  helpExperience: {
+    type: String,
+  },
+
+  projectGuru: {
+    type: String,
+  },
+
+  //  promoPlan: {
+  // //essay: {
+  //   type: String,
+  //   //min: 0,
+  //   //max: 1500
+  // },
 
   // Optional info for demographics
   gender: {
