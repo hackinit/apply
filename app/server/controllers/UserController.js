@@ -55,7 +55,8 @@ function canRegister(email, password, callback){
         return callback(err);
       }
       for (var i = 0; i < emails.length; i++) {
-        if (validator.isEmail(email) && endsWith(emails[i], email)){
+        // if (validator.isEmail(email) && endsWith(emails[i], email)){
+        if (validator.isEmail(email)){
           return callback(null, true);
         }
       }

@@ -9,3 +9,9 @@ app/client/build/
 # macOS
 .DS_Store
 .python-version
+
+# Bower
+app/client/plugins
+
+# Confidential Configurations
+.env

@@ -207,7 +207,7 @@ controller.sendApplicationReceivedEmail = function(email, callback){
 
   var locals = {
     title: '已收到你的申请',
-    body: '我们已收到你的校园大使申请, 相关团队会认真审核并及时给出反馈意见.',
+    body: '我们已收到你的The Hack参赛者申请, 相关团队会认真审核并及时给出反馈意见.',
   };
 
   /**

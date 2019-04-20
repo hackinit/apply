@@ -19,17 +19,46 @@ var profile = {
     default: false,
   },
 
+  birth: {
+    type: String,
+    required: true,
+  },
+
   school: {
     type: String,
     min: 1,
     max: 150,
   },
 
-  graduationYear: {
+  grade: {
     type: String,
     enum: {
-      values: '2019 2020 2021 2022+'.split(' '),
+      values: 'g9 g10 g11 g12 c1 c2 other'.split(' '),
     }
+  },
+
+  location: {
+    type: String
+  },
+
+  isAmbassador: {
+    type: String,
+    required: true,
+    enum: {
+      values: '0 1'.split(' ')
+    }
+  },
+
+  techSkills: {
+    type: Array
+  },
+
+  additionalSkills: {
+    type: String
+  },
+
+  beGuide: {
+    type: String
   },
 
   description: {
@@ -61,6 +90,10 @@ var profile = {
     type: String
   },
 
+  socialAccount: {
+    type: String,
+  },
+
    schoolRole: {
     type: String,
   },
@@ -76,6 +109,38 @@ var profile = {
   projectGuru: {
     type: String,
   },
+
+
+  haveTeam: {
+    type: String,
+  },
+
+
+  assignTeam: {
+    type: String,
+  },
+
+
+  numberMember: {
+    type: String,
+  },
+
+
+  captainEmail: {
+    type: String,
+  },
+
+
+  captainName: {
+    type: String,
+  },
+
+
+  members: {
+    type: String,
+  },
+
+
 
   //  promoPlan: {
   // //essay: {
@@ -373,7 +438,7 @@ schema.statics.validateProfile = function(profile, cb){
     profile.name.length > 0 &&
     //profile.adult &&
     profile.school.length > 0 &&
-    ['2019', '2020', '2021', '2022+'].indexOf(profile.graduationYear) > -1 &&
+    // ['2019', '2020', '2021', '2022+'].indexOf(profile.graduationYear) > -1 &&
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1
     ));
 };

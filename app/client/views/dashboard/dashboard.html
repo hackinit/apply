@@ -63,7 +63,7 @@
           ng-class="settings.timeClose"
           ng-if="!dashState('admittedAndCanConfirm') || !dashState('admittedAndCannotConfirm') || !dashState('confirmed') || !dashState('declined')">
           <strong>
-              校园大使申请截止日期：
+              参赛者申请截止日期：
           </strong>
           {{ timeClose }}
         </div>
@@ -72,7 +72,7 @@
           ng-class="settings.timeConfirm"
           ng-if="dashState('admittedAndCanConfirm') || dashState('admittedAndCannotConfirm') || dashState('confirmed') || dashState('declined')">
           <strong>
-               校园大使确认截止日期：
+               参赛者确认截止日期：
           </strong>
           {{ timeConfirm }}
         </div>
@@ -185,12 +185,12 @@
 
           <div class="ui purple button"
                ui-sref="app.confirmation">
-            我确认加入 THE Hack 2019 校园大使
+            我确认加入 THE Hack 2019 参赛者
           </div>
 
           <div class="ui red button"
                ng-click="declineAdmission()">
-               无法加入 THE Hack 2019 校园大使，我放弃这次机会
+               无法加入 THE Hack 2019 参赛者，我放弃这次机会
           </div>
 
         </div>
