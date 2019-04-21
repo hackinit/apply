@@ -21,7 +21,7 @@ var profile = {
 
   birth: {
     type: String,
-    required: true,
+    // required: true,
   },
 
   school: {
@@ -43,7 +43,7 @@ var profile = {
 
   isAmbassador: {
     type: String,
-    required: true,
+    // required: true,
     enum: {
       values: '0 1'.split(' ')
     }
