@@ -2,14 +2,14 @@ FROM node:9.3.0
 
 LABEL maintainer="Ye Shu <ye.shu@hackinit.org>"
 
-RUN mkdir /code
 WORKDIR /code
 
-ADD package.json /code/
-ADD bower.json /code/
-ADD app.json /code/
-ADD .env.config /code/
-ADD .bowerrc /code/
+COPY bower.json /code/
+COPY app.json /code/
+COPY .env.config /code/
+COPY .bowerrc /code/
+COPY package.json /code/
+COPY package-lock.json /code/
 
 # RUN npm config set registry https://registry.npm.taobao.org
 
@@ -23,6 +23,7 @@ RUN npm install
 RUN bower install --allow-root
 RUN npm run config
 
-ADD . /code/
+COPY . /code/
+EXPOSE 3000
 
-CMD gulp server
+CMD ["gulp", "server"]
