@@ -1,26 +1,29 @@
 FROM node:9.3.0
 
-MAINTAINER Yuchong Pan <panyuchong@gmail.com>
+LABEL maintainer="Ye Shu <ye.shu@hackinit.org>"
 
-RUN mkdir /code
 WORKDIR /code
 
-ADD package.json /code/
-ADD bower.json /code/
-ADD app.json /code/
-ADD .env.config /code/
-ADD .bowerrc /code/
+COPY bower.json /code/
+COPY app.json /code/
+COPY .env.config /code/
+COPY .bowerrc /code/
+COPY package.json /code/
+COPY package-lock.json /code/
 
-RUN npm config set registry https://registry.npm.taobao.org
+# RUN npm config set registry https://registry.npm.taobao.org
 
-RUN npm install -g bower
-RUN npm install -g gulp@3.9.1
+RUN npm install -g bower@1.8.8
+# RUN npm install -g gulp@3.9.1
 
 # replace bcrypt
-RUN npm install bcrypt-nodejs --save
+# RUN npm install bcrypt-nodejs --save
 
 RUN npm install
 RUN bower install --allow-root
 RUN npm run config
 
-ADD . /code/
+COPY . /code/
+EXPOSE 3000
+
+CMD ["gulp", "server"]
