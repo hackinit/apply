@@ -13,11 +13,11 @@ ADD .bowerrc /code/
 
 # RUN npm config set registry https://registry.npm.taobao.org
 
-RUN npm install -g bower
-RUN npm install -g gulp@3.9.1
+# RUN npm install -g bower
+# RUN npm install -g gulp@3.9.1
 
 # replace bcrypt
-RUN npm install bcrypt-nodejs --save
+# RUN npm install bcrypt-nodejs --save
 
 RUN npm install
 RUN bower install --allow-root
