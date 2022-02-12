@@ -11,7 +11,7 @@ COPY .bowerrc /code/
 COPY package.json /code/
 COPY package-lock.json /code/
 
-# RUN npm config set registry https://registry.npm.taobao.org
+# RUN npm config set registry https://registry.npmmirror.com
 
 RUN npm install -g bower@1.8.8
 RUN npm install -g gulp@3.9.1
